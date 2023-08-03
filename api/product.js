@@ -28,6 +28,16 @@ const products = [
         ProductInfo:"Samsung India Electronics Pvt ltd, 6th Floor , DLF Centre, Sansad Marg, New Delhi - 110001 . Email id: support.india@samsung.com, Tel(Toll Free): 1800 40 7267864",
         price:499,
         image:"https://m.media-amazon.com/images/I/41V4aNRci3L._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        id:4,
+        name:"Apple 2020 MacBook Air Laptop M1 chip ",
+        desc:"13.3-inch display",
+        ActualPrice:2099,
+        save:"32%",
+        ProductInfo:"Simply Compatible – All your existing apps work, including Adobe Creative Cloud, Microsoft 365, and Google Drive. Plus you can use your favorite iPhone and iPad apps directly on macOS. Altogether you’ll have access to the biggest collection of apps ever for Mac. All available on the App Store.",
+        price:1499,
+        image:"https://m.media-amazon.com/images/I/31+G-o8iK-L._SX342_SY445_.jpg"
     }
 ];
 
