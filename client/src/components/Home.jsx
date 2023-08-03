@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { productFetch } from "./productSlice/ProductSlice"; // Import your productFetch action
@@ -12,12 +12,20 @@ function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
   const status = useSelector((state) => state.products.status);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleAddtoCart = (product)=> {
     dispatch(addToCart(product));
     
   }
+
+  const handleSearchInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  }
  
+  const filteredProducts = products.filter((product) =>
+  product.name.toLowerCase().includes(searchQuery.toLowerCase())
+);
 
   useEffect(() => {
     dispatch(productFetch());
@@ -33,6 +41,14 @@ function Home() {
         <>
         <div className="headdiv">
         <h2 className="headertag">New Arrivals</h2>
+        <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search for the name of the product"
+                value={searchQuery}
+                onChange={handleSearchInputChange}
+              />
+            </div>
         
         <div className="create_button_container" >
           <Link to={'/createNew'}>
@@ -44,7 +60,7 @@ function Home() {
        
 
         <div className="product-container">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
           
             <div className="products_items">
               <div className="product_img">
