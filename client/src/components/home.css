@@ -1,0 +1,99 @@
+/* styles.css */
+
+/* Product container class */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .headertag {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px; /* Set the desired font size */
+    font-weight: bold; /* Set the desired font weight */
+  }
+
+  .create_button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin-top as needed */
+  }
+  
+  .createbutton {
+    background-color: rgb(72, 180, 216);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    /* Add any other desired styles */
+  }
+ 
+ 
+  
+
+  /* Individual product container */
+  .products_items {
+    width: 240px; /* Increase the width for each product container */
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Product image */
+  .product_img img {
+    width: 180px; /* Increase the width for each product image */
+    height: 180px; /* Increase the height for each product image */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 5px;
+  }
+  
+  /* Product name */
+  .products_name {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Product description */
+  .products_offer {
+    color: #007185;
+    margin: 5px 0;
+  }
+  
+  /* Product price */
+  .products_price {
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  /* Link styles (optional) */
+  a {
+    color: #007185;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .products_items button{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    background-color: orange;
+    font-size: 15px;
+  }
