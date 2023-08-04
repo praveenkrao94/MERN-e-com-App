@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
-  status: 'idle', // 'idle', 'loading', 'succeeded', or 'failed'
+  status: 'idle', 
   error:null
 };
 
@@ -11,7 +11,7 @@ export const productFetch = createAsyncThunk(
   'products/productFetch',
   async (id = null , {rejectWithValue}) => {
     try{
-        const res = await axios.get('http://localhost:4000/products');
+        const res = await axios.get('https://task-ecom.onrender.com/products');
         return res?.data;
     }
     catch(err){
