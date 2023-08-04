@@ -30,7 +30,9 @@ function Cart() {
 
   function clearProduct(){
     localStorage.removeItem("cartItems")
+   setTimeout(() => {
     window.location.reload()
+   }, 500);
   }
 
   function handleDecrease(cartItem) {
