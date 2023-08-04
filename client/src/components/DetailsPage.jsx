@@ -62,7 +62,7 @@ const navigate = useNavigate()
            
                 <div className='discount_box' >
                     <h5>Discount : : <span style={{ color: "red" }}>Extra {product.save} </span></h5>
-                    <h4>Free Delivery : <span style={{ color: "#111" , fontWeight:600 }}>Oct 8 - 21 <a >Details</a></span></h4>
+                    <h4>Free Delivery : <span style={{ color: "#111" , fontWeight:600 }}>Oct 8 - 21 Details</span></h4>
                     <p>Fastest delivery: <span style={{ color: "#111" , fontWeight:600 }}>Tomorrow 11Am</span></p>
                 </div>
                 <hr />
