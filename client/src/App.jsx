@@ -8,7 +8,7 @@ import './App.css'
 import Pagenf from './components/pnf/Pagenf'
 import DetailsPage from './components/DetailsPage'
 import { ToastContainer } from 'react-toastify'
-import CreateNew from './components/createNew/CreateNew';
+
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
     <Route  path='/' element = {<Home/>} />
     <Route  path='/cart' element = {<Cart/>} />
     <Route  path='/product/:id' element = {<DetailsPage/>} />
-    {/* <Route  path='/createNew' element = {<CreateNew/>} /> */}
+   
     <Route  path='*' element = {<Pagenf/>} />
   </Routes>
     </BrowserRouter>
