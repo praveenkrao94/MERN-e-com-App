@@ -22,7 +22,7 @@ mongoose
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "*",
 }));
 const port =  4000;
 const http = require("http");
