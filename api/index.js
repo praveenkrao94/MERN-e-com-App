@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const products = require('./product');
 
-// const products = require("./Models/ProductModel");
+// const Product = require("./Models/ProductModel");
 
 const cors = require("cors");
 
@@ -22,9 +22,9 @@ mongoose
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 app.use(cors({
-    origin: "*",
+    origin: "http://localhost:3000",
 }));
-const port = process.env.PORT || 4000;
+const port =  4000;
 const http = require("http");
 const server = http.createServer(app);
 
@@ -35,39 +35,6 @@ app.get("/test", (req, res) => {
   res.json("test ok");
 });
 
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, 'uploads'); // Destination folder for uploaded images
-//     },
-//     filename: function (req, file, cb) {
-//       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-//       cb(null, file.fieldname + '-' + uniqueSuffix + '.jpg'); // Rename image files with a unique name
-//     }
-//   });
-  
-//   const upload = multer({ storage: storage });
-  
-//   router.post('/products', upload.single('image'), (req, res) => {
-//     const { name, ActualPrice, desc, price, ProductInfo, save } = req.body;
-//     const image = req.file ? req.file.filename : undefined; // Get the filename of the uploaded image
-//     const product = new Product({
-//       name,
-//       save,
-//       desc,
-//       price,
-//       image,
-//       ProductInfo,
-//       ActualPrice,
-//     });
-  
-//     product.save()
-//       .then(savedProduct => {
-//         res.status(200).send(savedProduct);
-//       })
-//       .catch(error => {
-//         res.status(500).send(error);
-//       });
-//   });
 
   app.get('/products', (req, res) => {
     res.send(products);
@@ -76,16 +43,55 @@ app.get("/test", (req, res) => {
 
 
 
-app.get("/product/:id", (req, res) => {
-  const productId = req.params.id;
-  const product = products.find((p) => p.id === productId);
+app.get("/product/:id", async (req, res) => {
+    try {
+      const productId = req.params.id;
+      const product = await Product.findById(productId);
+  
+      if (!product) {
+        return res.status(404).json({ error: "Product not found" });
+      }
+  
+      res.json(product);
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to get product' });
+    }
+  });
 
-  if (!product) {
-    return res.status(404).json({ error: "Product not found" });
-  }
 
-  res.json(product);
-});
+  // app.post('/create', async (req, res) => {
+  //   try {
+  //     const { name, description, price, discountPrice } = req.body;
+  
+  //     const newProduct = await Product.create({
+  //       name,
+  //       description,
+  //       price,
+  //       discountPrice,
+  //     });
+  
+  //     res.status(201).json(newProduct);
+  //   } catch (error) {
+  //     res.status(500).json({ message: 'Failed to create product' });
+  //   }
+  // });
+  
+  
+
+
+
+
+
+  
+  // Get all products
+  app.get('/getAll', async (req, res) => {
+    try {
+      const products = await Product.find({});
+      res.json(products);
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to get products' });
+    }
+  });
 
 server.listen(port, () => {
   console.log(`listening on ${port}`);
