@@ -43,6 +43,10 @@ function Cart() {
     dispatch(addToCart(cartItem));
   }
 
+
+  function toDetailsPage(id) {
+    navigate(`/product/${id}`); 
+  }
   return (
     <div className="cart-container">
     <h2>Shopping Cart</h2>
@@ -80,7 +84,7 @@ function Cart() {
           {cart.cartItems &&
             cart.cartItems.map((cartItem) => (
               <div className="cart-item" key={cartItem.id}>
-                <div className="cart-product">
+                <div className="cart-product" style={{cursor:'pointer'}} onClick={()=>toDetailsPage(cartItem.id)}>
                   <img src={cartItem.image} alt={cartItem.name} />
                   <div>
                     <h3>{cartItem.name}</h3>
