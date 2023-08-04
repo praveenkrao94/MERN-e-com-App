@@ -6,7 +6,7 @@ import "./home.css";
 import { addToCart } from "./productSlice/cartSlice/CartSlice";
 
 function Home() {
-  const Navigate = useNavigate();
+ 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
   const status = useSelector((state) => state.products.status);

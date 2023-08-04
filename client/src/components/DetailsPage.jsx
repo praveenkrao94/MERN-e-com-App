@@ -47,7 +47,7 @@ const navigate = useNavigate()
 <div className='cart_section'>
         <div className="cart_container">
             <div className="left_cart">
-                <img src={product.image} alt="" />
+                <img src={product.image} alt="#" />
                 <div className="cart_btn">
                     <button className='cart_btn1' onClick={()=> handleAddtoCart(product)}>Add to Cart</button>
                     <button className='cart_btn2'onClick={()=> handleAddtoCart(product)}>But Now</button>
@@ -62,7 +62,7 @@ const navigate = useNavigate()
            
                 <div className='discount_box' >
                     <h5>Discount : : <span style={{ color: "red" }}>Extra {product.save} </span></h5>
-                    <h4>Free Delivery : <span style={{ color: "#111" , fontWeight:600 }}>Oct 8 - 21 <a href="">Details</a></span></h4>
+                    <h4>Free Delivery : <span style={{ color: "#111" , fontWeight:600 }}>Oct 8 - 21 <a >Details</a></span></h4>
                     <p>Fastest delivery: <span style={{ color: "#111" , fontWeight:600 }}>Tomorrow 11Am</span></p>
                 </div>
                 <hr />
