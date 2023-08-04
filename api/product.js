@@ -1,7 +1,7 @@
 const products = [
     {
         id: 1,
-        name: "Apple iPhone 14 Pro Max (256 GB) - Deep Purple",
+        name: "Apple iPhone 14 Pro Max",
         desc: "6.1-inch display",
         ProductInfo: "Apple-branded hardware product and accessories contained in the original packaging (“Apple Product”) come with a One-Year Limited Warranty. See apple.com/in/legal/warranty for more information.",
         ActualPrice: 1299,
@@ -23,7 +23,7 @@ const products = [
     },
     {
         id: 3,
-        name: "Samsung Galaxy S23 5G (Green, 8GB, 256GB Storage)",
+        name: "Samsung Galaxy S23 5G ",
         desc: "6.5-inch display",
         ActualPrice: 1699,
         save: "32%",
@@ -34,7 +34,7 @@ const products = [
     },
     {
         id: 4,
-        name: "Apple 2020 MacBook Air Laptop M1 chip",
+        name: "Apple 2020 MacBook Air",
         desc: "13.3-inch display",
         ActualPrice: 2099,
         save: "32%",
